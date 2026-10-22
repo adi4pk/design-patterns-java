@@ -25,14 +25,30 @@ public class Comanda {
     }
 
     public void aboneaza(Observator observator) {
-        throw new UnsupportedOperationException("Not implemented yet");
+        observatori.add(observator);
+
+//        throw new UnsupportedOperationException("Not implemented yet");
     }
 
     public void dezaboneaza(Observator observator) {
-        throw new UnsupportedOperationException("Not implemented yet");
+
+        observatori.remove(observator);
     }
 
     public void schimbaStare(String stareNoua) {
-        throw new UnsupportedOperationException("Not implemented yet");
+
+        if(stareNoua == null || stareNoua.isBlank()){
+            throw new IllegalArgumentException("State cannot be empty");
+        }
+        else if(stareNoua.equals(stare)){
+            return;
+        }
+
+        stare = stareNoua;  //update the state of stare
+        for (Observator observator: observatori){
+            observator.actualizeaza(stareNoua);     //update the state of all Observers
+        }
+
+//        throw new UnsupportedOperationException("Not implemented yet");
     }
 }

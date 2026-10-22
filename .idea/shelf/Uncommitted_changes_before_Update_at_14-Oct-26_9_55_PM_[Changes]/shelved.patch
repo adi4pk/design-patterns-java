@@ -1,0 +1,72 @@
+Index: src/app/ex1/models/Comanda.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package app.ex1.models;\r\n\r\npublic class Comanda {\r\n    private final String client;\r\n    private final double greutateKg;\r\n    private final double distantaKm;\r\n    private LivrareStrategie strategie;\r\n\r\n    public Comanda(String client, double greutateKg, double distantaKm, LivrareStrategie strategie) {\r\n        if (greutateKg <= 0) {\r\n            throw new IllegalArgumentException(\"Weight must be positive\");\r\n        }\r\n        if (distantaKm < 0) {\r\n            throw new IllegalArgumentException(\"Distance cannot be negative\");\r\n        }\r\n        this.client = client;\r\n        this.greutateKg = greutateKg;\r\n        this.distantaKm = distantaKm;\r\n        this.strategie = strategie;\r\n    }\r\n\r\n    public String getClient() {\r\n        return client;\r\n    }\r\n\r\n    public double getGreutateKg() {\r\n        return greutateKg;\r\n    }\r\n\r\n    public double getDistantaKm() {\r\n        return distantaKm;\r\n    }\r\n\r\n    public LivrareStrategie getStrategie() {\r\n        return strategie;\r\n    }\r\n\r\n    public void schimbaStrategie(LivrareStrategie noua) {\r\n        throw new UnsupportedOperationException(\"Not implemented yet\");\r\n    }\r\n\r\n    public double costTransport() {\r\n        throw new UnsupportedOperationException(\"Not implemented yet\");\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/app/ex1/models/Comanda.java b/src/app/ex1/models/Comanda.java
+--- a/src/app/ex1/models/Comanda.java	(revision b7635b9163edf13e42bf3323d6ca3a79b1408021)
++++ b/src/app/ex1/models/Comanda.java	(date 1792003131244)
+@@ -36,10 +36,10 @@
+     }
+ 
+     public void schimbaStrategie(LivrareStrategie noua) {
+-        throw new UnsupportedOperationException("Not implemented yet");
++      this.strategie=noua;
+     }
+ 
+     public double costTransport() {
+-        throw new UnsupportedOperationException("Not implemented yet");
++        return  this.strategie.calculeazaCost(greutateKg,distantaKm);
+     }
+ }
+Index: src/app/Main.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package app;\r\n\r\nimport app.ex1.Testare1;\r\n\r\npublic class Main {\r\n    public static void main(String[] args) {\r\n        Testare1.ruleaza();\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/app/Main.java b/src/app/Main.java
+--- a/src/app/Main.java	(revision b7635b9163edf13e42bf3323d6ca3a79b1408021)
++++ b/src/app/Main.java	(date 1792003179455)
+@@ -6,4 +6,8 @@
+     public static void main(String[] args) {
+         Testare1.ruleaza();
+     }
++
++
++
++
+ }
+Index: src/app/ex1/Testare1.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package app.ex1;\r\n\r\nimport app.ex1.models.Comanda;\r\nimport app.ex1.models.LivrareExpress;\r\nimport app.ex1.models.LivrareGratuita;\r\nimport app.ex1.models.LivrareStandard;\r\n\r\npublic class Testare1 {\r\n\r\n    public static void ruleaza() {\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/app/ex1/Testare1.java b/src/app/ex1/Testare1.java
+--- a/src/app/ex1/Testare1.java	(revision b7635b9163edf13e42bf3323d6ca3a79b1408021)
++++ b/src/app/ex1/Testare1.java	(date 1792003406592)
+@@ -1,12 +1,15 @@
+ package app.ex1;
+ 
+-import app.ex1.models.Comanda;
+-import app.ex1.models.LivrareExpress;
+-import app.ex1.models.LivrareGratuita;
+-import app.ex1.models.LivrareStandard;
++import app.ex1.models.*;
+ 
+ public class Testare1 {
+ 
+     public static void ruleaza() {
++
++        LivrareStrategie str1 = new LivrareStandard();
++
++        Comanda com1 = new Comanda("Lidl", 100, 20, str1);
++        System.out.println(com1.getClient());
++
+     }
+ }

@@ -4,6 +4,8 @@ public class PanouDepozit implements Observator {
 
     @Override
     public void actualizeaza(String stareNoua) {
-        throw new UnsupportedOperationException("Not implemented yet");
+
+        System.out.println("[DEPOZIT] Pregatesc pentru: " + stareNoua);
+//        throw new UnsupportedOperationException("Not implemented yet");
     }
 }

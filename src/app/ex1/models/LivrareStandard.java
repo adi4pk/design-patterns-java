@@ -9,6 +9,8 @@ public class LivrareStandard implements LivrareStrategie {
 
     @Override
     public double calculeazaCost(double greutateKg, double distantaKm) {
-        throw new UnsupportedOperationException("Not implemented yet");
+
+        double cost = (5 + 0.5 * greutateKg) + 0.1 * distantaKm;
+        return cost;
     }
 }

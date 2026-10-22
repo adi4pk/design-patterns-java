@@ -9,6 +9,7 @@ public class LivrareExpress implements LivrareStrategie {
 
     @Override
     public double calculeazaCost(double greutateKg, double distantaKm) {
-        throw new UnsupportedOperationException("Not implemented yet");
+        double cost = (12 + 1.0 * greutateKg) + 0.25 * distantaKm;
+        return cost;
     }
 }

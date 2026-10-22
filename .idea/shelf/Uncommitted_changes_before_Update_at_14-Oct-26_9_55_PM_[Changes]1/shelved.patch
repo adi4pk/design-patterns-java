@@ -1,0 +1,19 @@
+Index: src/app/Main.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package app;\r\n\r\nimport app.ex1.Testare1;\r\n\r\npublic class Main {\r\n    public static void main(String[] args) {\r\n        Testare1.ruleaza();\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/app/Main.java b/src/app/Main.java
+--- a/src/app/Main.java	(revision b7635b9163edf13e42bf3323d6ca3a79b1408021)
++++ b/src/app/Main.java	(date 1792004105308)
+@@ -6,4 +6,8 @@
+     public static void main(String[] args) {
+         Testare1.ruleaza();
+     }
++
++
++
++
+ }

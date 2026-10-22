@@ -4,6 +4,8 @@ public class JurnalLivrare implements Observator {
 
     @Override
     public void actualizeaza(String stareNoua) {
-        throw new UnsupportedOperationException("Not implemented yet");
+        System.out.println("[LOG] Stare inregistrata: " + stareNoua);
+//        throw new UnsupportedOperationException("Not implemented yet");
+
     }
 }

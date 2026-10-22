@@ -36,10 +36,17 @@ public class Comanda {
     }
 
     public void schimbaStrategie(LivrareStrategie noua) {
-        throw new UnsupportedOperationException("Not implemented yet");
+        strategie = noua;
+
+//        throw new UnsupportedOperationException("Not implemented yet");
     }
 
     public double costTransport() {
-        throw new UnsupportedOperationException("Not implemented yet");
+
+        if (greutateKg <= 0) {
+            throw new IllegalArgumentException("Greutatea trebuie sa fie mai mare decat 0");
+        }
+
+        return strategie.calculeazaCost(greutateKg, distantaKm);
     }
 }
