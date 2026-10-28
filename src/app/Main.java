@@ -5,6 +5,7 @@ import app.ex2.Testare2;
 import app.ex3.Testare3;
 import app.ex4.Testare4;
 import app.ex5.Testare5;
+import app.ex6.Testare6;
 
 public class Main {
     public static void main(String[] args) {
@@ -13,5 +14,6 @@ public class Main {
         Testare3.ruleaza();
         Testare4.ruleaza();
         Testare5.ruleaza();
+        Testare6.ruleaza();
     }
 }
